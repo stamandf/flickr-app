@@ -7,6 +7,7 @@ export default class Wall extends React.Component {
         super(props);
         this.state = {
             keywords: '',
+            total: 0,
             listPhotos: []
         }
     
@@ -31,6 +32,7 @@ export default class Wall extends React.Component {
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
             <Photo
+                key={item.id}
                 farm={item.farm}
                 server={item.server}
                 id={item.id}
@@ -45,9 +47,6 @@ export default class Wall extends React.Component {
                 {/* {this.state.total} results */}
                 <div className="gallery">
                 {photoList}
-                
-                <br/>
-               
                 
                 </div>
                

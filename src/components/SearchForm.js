@@ -1,16 +1,8 @@
 import React from 'react';
 import photo from '../utilities/getPhotos';
+import getKeyWords from '../utilities/buildSrchTerm';
 // import svgSprite from '../img/sprite.svg';
-// const photo = require('../utilities/getPhotos');
 
-let getKeyWords = (string) => {
-    console.log("getKeyWords!")
-    const words = string.split(" ");
-    console.log("words=", words);
-    const keywords = words.join('+');
-    console.log("keywords=", keywords);
-    return keywords;
-}
 let photosFound = [];
 // let photoUrl = '';
 
@@ -18,8 +10,7 @@ export default class SearchForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: "",
-            photos: []
+            text: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,22 +23,27 @@ export default class SearchForm extends React.Component {
         let newKeywords = getKeyWords(this.state.text);
         console.log("KeyWords = ", newKeywords);
         // this.props.addKeyword(newKeywords);
-
+        this.setState({ text: ''});
+        this.text.blur();
+        //get photos with input keywords
         photo.fetchPhotos(newKeywords, (errorMessage, results) => {
             if(errorMessage) {
                 console.log(errorMessage);
             } else {
                 photosFound = results;
-                console.log('PhotosFound:',photosFound);
-                console.log('Results:',photosFound.total);
-                console.log('Results:',photosFound.photo);
+                console.log('PhotosFound:',photosFound); //TRACE
+                console.log('Results:',photosFound.total); //TRACE
+                console.log('Results:',photosFound.photo); //TRACE
                 // this.props.addPhotos(photosFound.photo);
                 this.props.addPhotos(newKeywords, photosFound.total, photosFound.photo); //return search results
+                //reset form
+                this.setState({ text: ''}); 
+                this.text.blur();
+                
                 // Photo Source URLs:
                 // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-        
-                
             }
+
         });
 
 
@@ -61,6 +57,11 @@ export default class SearchForm extends React.Component {
                 <form className="search" onSubmit={this.handleSubmit}>
                     <input className="search__input"
                         type='text'
+                        id='text'
+                        name='text'
+                        ref={input => {
+                            this.text = input;
+                        }}
                         placeholder='Search photos'
                         value={this.state.text}
                         onChange={this.handleChange}
