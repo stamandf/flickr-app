@@ -23,9 +23,9 @@ export default class App extends React.Component {
           <div>
             <Wall/>
           </div>
-            <div>
+            {/* <div>
             <img src="https://farm66.staticflickr.com/65535/49255444951_d00df4eeff.jpg" alt="Sunset 1"></img>
-            </div>
+            </div> */}
                 
       </div>
       

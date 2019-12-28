@@ -42,13 +42,12 @@ export default class Wall extends React.Component {
                 <div className="search">
                 <SearchForm  addPhotos={this.addPhotos}/>
                 </div>
-                <div className="photos">
-                The photos your are looking for with the keywords:
-                {this.state.keywords}
-                <br/>
-                {this.state.total} results
-                <br/>
+                {/* {this.state.total} results */}
+                <div className="gallery">
                 {photoList}
+                
+                <br/>
+               
                 
                 </div>
                

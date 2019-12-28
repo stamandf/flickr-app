@@ -21,8 +21,8 @@ export default class Photo extends React.Component {
         //     // <Photo />
         // ));
         return (
-            <div className="Photo">
-                <img src={`https://farm${this.state.farm}.staticflickr.com/${this.state.server}/${this.state.id}_${this.state.secret}.jpg`}/>
+            <div className="gallery__item">
+                <img src={`https://farm${this.state.farm}.staticflickr.com/${this.state.server}/${this.state.id}_${this.state.secret}.jpg`} alt="Gallery image"/>
             </div>
         );
     }
