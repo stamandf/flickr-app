@@ -1,6 +1,9 @@
 import React from 'react'
 import SearchForm from './SearchForm';
 import Photo from './Photo';
+import Gallery from './Gallery';
+import Container from './Container';
+import Search from './Search';
 
 export default class Wall extends React.Component {
     constructor(props) {
@@ -39,19 +42,28 @@ export default class Wall extends React.Component {
                 secret={item.secret}
             />
         ));
+        // this.state.listPhotos.map(item => console.log("Item=", item));
+        photoList.map(item => console.log("photoList Item=", item));
+
         return (
-            <div className="container">
-                <div className="search">
+            <Container>
+            {/* <div className="search"> */}
+            <Search>
                 <SearchForm  addPhotos={this.addPhotos}/>
-                </div>
-                {/* {this.state.total} results */}
-                <div className="gallery">
-                {photoList}
+            </Search>
                 
-                </div>
+            {/* </div> */}
+                {/* {this.state.total} results */}
+                {/* <div className="gallery"> */}
+                <Gallery>
+                 {photoList}
+                </Gallery>
+            </Container>
+                
+                
+                
                
 
-            </div>
 
         );
 
