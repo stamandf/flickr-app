@@ -9,14 +9,16 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
     
 
     let req_url = flickrMethod + key + text + page + format;
-    console.log('text=', text);
-    console.log('req_url=', req_url);
+    console.log('fetchPhotos page=', page); //TRACE
+    console.log('fetchPhotos text=', text); //TRACE
+    console.log('fetchPhotos req_url=', req_url); //TRACE
     request ({
         url: req_url,
         json:true
     }, (error, response, body) => {
         if(!error && response.statusCode === 200) {
             callback(undefined, {
+                page: body.photos.page,
                 total: body.photos.total,
                 photo: body.photos.photo
             });

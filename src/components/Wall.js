@@ -13,6 +13,7 @@ export default class Wall extends React.Component {
         super(props);
         this.state = {
             keywords: '',
+            page: 1,
             total: 0,
             listPhotos: [],
             hasMore: true
@@ -26,9 +27,10 @@ export default class Wall extends React.Component {
     addKeyword(words)  {
         this.setState({ keywords: words });
     }
-    addPhotos(words,total, photos)  {
+    addPhotos(words, page, total, photos)  {
         this.setState({
             keywords: words,
+            page: page,
             total: total,
             listPhotos: photos
         })
@@ -40,24 +42,21 @@ export default class Wall extends React.Component {
             return;
         }
         setTimeout(() => {
-            photo.fetchPhotos(this.state.keywords, 1, (errorMessage, results) => {
+            photo.fetchPhotos(this.state.keywords, this.state.page+1, (errorMessage, results) => {
                 if(errorMessage) {
                     console.log(errorMessage);
                 } else {
                     photosFound = results;
+                    console.log('PAGE:',photosFound.page); //TRACE
+                    console.log('TOTAL:',photosFound.total); //TRACE
                     console.log('PhotosFound:',photosFound); //TRACE
-                    console.log('Results:',photosFound.total); //TRACE
                     console.log('Results:',photosFound.photo); //TRACE
                     this.setState({
                         listPhotos: this.state.listPhotos.concat(photosFound.photo)
                     })
                     
                     //reset form
-                    // this.setState({ text: ''}); 
-                    // this.text.blur();
                     
-                    //relocate
-                    // this.props.history.push(`/#/${newKeywords}`);
                     
                     // Photo Source URLs:
                     // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -100,7 +99,7 @@ export default class Wall extends React.Component {
                     hasMore={this.state.hasMore}
                     // loader={<h4>Loading...</h4>}
                     loader={
-                        <InfinitScrollDots/>
+                        <InfinitScrollDots className="icon__infinity"/>
                     }
                     height={800}
                     endMessage={
