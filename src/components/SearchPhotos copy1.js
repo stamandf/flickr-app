@@ -10,7 +10,7 @@ class SearchPhotos extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: ""
+            keywords: ""
         };
         console.log("SearchPhotos props= ", this.props);
         this.handleChange = this.handleChange.bind(this);
@@ -24,10 +24,8 @@ class SearchPhotos extends React.Component {
         let newKeywords = getKeyWords(this.state.text);
         console.log("KeyWords = ", newKeywords);
         // this.props.addKeyword(newKeywords);
-        
         this.setState({ text: ''});
         this.text.blur();
-
         //get photos with input keywords
         photo.fetchPhotos(newKeywords, (errorMessage, results) => {
             if(errorMessage) {
@@ -50,6 +48,10 @@ class SearchPhotos extends React.Component {
                 // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
             }
         });
+        
+
+        // alert(`You are searching for pictures with: ${newKeywords}`);
+        // this.setState({ text:'' });
     }
     
     render() {
@@ -68,6 +70,11 @@ class SearchPhotos extends React.Component {
                         value={this.state.text}
                         onChange={this.handleChange}
                     />
+                    {/* <button className="search__button">
+                        <svg className="search__icon">
+                            <use xlinkHref={`${svgSprite}#{icon-magnifying-glass}`} />
+                        </svg>
+                    </button> */}
                 </form>
             </div>
         );

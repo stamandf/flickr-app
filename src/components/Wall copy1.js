@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchPhotos from './SearchPhotos';
+import SearchForm from './SearchForm';
 import Photo from './Photo';
 import Gallery from './Gallery';
 import Container from './Container';
@@ -30,10 +30,7 @@ export default class Wall extends React.Component {
         })
     }
     render() {
-        console.log("Wall this state=", this.state);
-        console.log("the total= ", this.state.total);
-        console.log("Array length= ", this.state.listPhotos.length);
-
+        console.log("this state=", this.state);
         const photoList = this.state.listPhotos.map(item => (
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -46,13 +43,13 @@ export default class Wall extends React.Component {
             />
         ));
         // this.state.listPhotos.map(item => console.log("Item=", item));
-        // photoList.map(item => console.log("photoList Item=", item));
+        photoList.map(item => console.log("photoList Item=", item));
 
         return (
             <Container>
             {/* <div className="search"> */}
             <Search>
-                <SearchPhotos  addPhotos={this.addPhotos}/>
+                <SearchForm  addPhotos={this.addPhotos}/>
             </Search>
                 
             {/* </div> */}

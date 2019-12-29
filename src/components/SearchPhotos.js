@@ -27,9 +27,8 @@ class SearchPhotos extends React.Component {
         
         this.setState({ text: ''});
         this.text.blur();
-
         //get photos with input keywords
-        photo.fetchPhotos(newKeywords, (errorMessage, results) => {
+        photo.fetchPhotos(newKeywords, 1, (errorMessage, results) => {
             if(errorMessage) {
                 console.log(errorMessage);
             } else {

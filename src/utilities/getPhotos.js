@@ -1,13 +1,14 @@
 const request = require('request');
 
-const fetchPhotos = (srchtext, callback) => {
+const fetchPhotos = (srchtext, srchpage, callback) => {
     const key = '&api_key=44779de00e72e9ec8ffbf165bc0f6ca6';
     const flickrMethod = 'https://www.flickr.com/services/rest/?method=flickr.photos.search';
     const format = '&format=json&nojsoncallback=1';
     let text = '&text=' + srchtext;
+    let page = '&page=' + srchpage;
     
 
-    let req_url = flickrMethod + key + text + format;
+    let req_url = flickrMethod + key + text + page + format;
     console.log('text=', text);
     console.log('req_url=', req_url);
     request ({
