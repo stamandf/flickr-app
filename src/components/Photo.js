@@ -24,6 +24,7 @@ export default class Photo extends React.Component {
             <figure className="gallery__item ">
                 <img src={`https://farm${this.state.farm}.staticflickr.com/${this.state.server}/${this.state.id}_${this.state.secret}.jpg`} alt={`Gallery item ${this.state.id}`}  />
             </figure>
+            
         );
     }
 

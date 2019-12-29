@@ -30,7 +30,10 @@ export default class Wall extends React.Component {
         })
     }
     render() {
-        console.log("this state=", this.state);
+        console.log("Wall this state=", this.state);
+        console.log("the total= ", this.state.total);
+        console.log("Array length= ", this.state.listPhotos.length);
+
         const photoList = this.state.listPhotos.map(item => (
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -43,7 +46,7 @@ export default class Wall extends React.Component {
             />
         ));
         // this.state.listPhotos.map(item => console.log("Item=", item));
-        photoList.map(item => console.log("photoList Item=", item));
+        // photoList.map(item => console.log("photoList Item=", item));
 
         return (
             <Container>
