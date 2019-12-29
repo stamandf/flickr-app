@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchPhotos from './SearchPhotos';
+import SearchForm from './SearchForm';
 import Photo from './Photo';
 import Gallery from './Gallery';
 import Container from './Container';
@@ -49,7 +49,7 @@ export default class Wall extends React.Component {
             <Container>
             {/* <div className="search"> */}
             <Search>
-                <SearchPhotos  addPhotos={this.addPhotos}/>
+                <SearchForm  addPhotos={this.addPhotos}/>
             </Search>
                 
             {/* </div> */}
