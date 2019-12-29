@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import photo from '../utilities/getPhotos';
 import getKeyWords from '../utilities/buildSrchTerm';
-// import svgSprite from '../img/sprite.svg';
+import MagnifyingGlass from './InfinitScrollDots';
 
 let photosFound = [];
 // let photoUrl = ''

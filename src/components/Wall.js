@@ -1,5 +1,6 @@
 import React from 'react'
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from 'react-infinite-scroll-component';
+import InfinitScrollDots from './InfinitScrollDots';
 import SearchPhotos from './SearchPhotos';
 import Photo from './Photo';
 import Gallery from './Gallery';
@@ -97,7 +98,10 @@ export default class Wall extends React.Component {
                     dataLength={photoList.length}
                     next={this.fetchMoreData}
                     hasMore={this.state.hasMore}
-                    loader={<h4>Loading...</h4>}
+                    // loader={<h4>Loading...</h4>}
+                    loader={
+                        <InfinitScrollDots/>
+                    }
                     height={800}
                     endMessage={
                         <p>THE END.</p>
