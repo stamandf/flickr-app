@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import uuid from 'uuid';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import InfinitScrollDots from './InfinitScrollDots';
 import SearchPhotos from './SearchPhotos';
@@ -49,9 +50,10 @@ export default class Wall extends React.Component {
                     photosFound = results;
                     console.log('PAGE:',photosFound.page); //TRACE
                     console.log('TOTAL:',photosFound.total); //TRACE
-                    console.log('PhotosFound:',photosFound); //TRACE
-                    console.log('Results:',photosFound.photo); //TRACE
+                    // console.log('PhotosFound:',photosFound); //TRACE
+                    // console.log('Results:',photosFound.photo); //TRACE
                     this.setState({
+                        page: photosFound.page,
                         listPhotos: this.state.listPhotos.concat(photosFound.photo)
                     })
                     
@@ -75,7 +77,7 @@ export default class Wall extends React.Component {
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
             <Photo
-                key={item.id}
+                key={uuid()}
                 farm={item.farm}
                 server={item.server}
                 id={item.id}
@@ -83,7 +85,7 @@ export default class Wall extends React.Component {
             />
         ));
         // this.state.listPhotos.map(item => console.log("Item=", item));
-        photoList.map(item => console.log("photoList Item=", item));
+        // photoList.map(item => console.log("photoList Item=", item)); //TRACE
 
         return (
             <Container>

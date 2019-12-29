@@ -35,8 +35,8 @@ class SearchPhotos extends React.Component {
                 photosFound = results;
                 console.log('PAGE:',photosFound.page); //TRACE
                 console.log('TOTAL:',photosFound.total); //TRACE
-                console.log('PhotosFound:',photosFound); //TRACE
-                console.log('Results:',photosFound.photo); //TRACE
+                // console.log('PhotosFound:',photosFound); //TRACE
+                // console.log('Results:',photosFound.photo); //TRACE
                 this.props.addPhotos(newKeywords, photosFound.page, photosFound.total, photosFound.photo); //return search results
                 
                 //reset form
