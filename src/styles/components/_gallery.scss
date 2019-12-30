@@ -3,15 +3,6 @@
     background-color: $color-grey-light-1;
     grid-template-columns: repeat(3, minmax(50rem, 1fr));
     justify-items: start;
-    // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    // grid-template-columns: repeat(3, fit-content(40%));
-    // grid-template-columns: repeat(3, min-content);
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: repeat(100, 15vw);
-    // grid-template-columns: repeat(3, minmax(min-content, 1fr));
-    // grid-template-rows: repeat(100, 6vw);
-    // grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
-    // grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
     width: 100%;
     padding: 2rem;
@@ -33,8 +24,6 @@
             height: 50%;
             width: 50%;
             display: inline-block;
-            // object-fit: scale-down;
-            
         }
     }
 }

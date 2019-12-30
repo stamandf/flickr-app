@@ -6,12 +6,10 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
     const format = '&format=json&nojsoncallback=1';
     let text = '&text=' + srchtext;
     let page = '&page=' + srchpage;
-    
 
+    // The flickr method flickr.photos.search request URL
     let req_url = flickrMethod + key + text + page + format;
-    console.log('fetchPhotos page=', page); //TRACE
-    console.log('fetchPhotos text=', text); //TRACE
-    console.log('fetchPhotos req_url=', req_url); //TRACE
+
     request ({
         url: req_url,
         json:true
@@ -29,8 +27,4 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
 
 
 }
-
-// https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=44779de00e72e9ec8ffbf165bc0f6ca6&text=sunset&format=json&nojsoncallback=1
-// URL: https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=44779de00e72e9ec8ffbf165bc0f6ca6&text=sunset+cat&format=json&nojsoncallback=1
-
 module.exports.fetchPhotos = fetchPhotos;

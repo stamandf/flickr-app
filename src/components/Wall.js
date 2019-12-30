@@ -48,10 +48,6 @@ export default class Wall extends React.Component {
                     console.log(errorMessage);
                 } else {
                     photosFound = results;
-                    console.log('PAGE:',photosFound.page); //TRACE
-                    console.log('TOTAL:',photosFound.total); //TRACE
-                    // console.log('PhotosFound:',photosFound); //TRACE
-                    // console.log('Results:',photosFound.photo); //TRACE
                     this.setState({
                         page: photosFound.page,
                         listPhotos: this.state.listPhotos.concat(photosFound.photo)
@@ -63,13 +59,10 @@ export default class Wall extends React.Component {
     }
 
     render() {
-        console.log("Wall this state=", this.state);
-        console.log("the total= ", this.state.total);
-        console.log("Array length= ", this.state.listPhotos.length);
-
         const photoList = this.state.listPhotos.map(item => (
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+
             <Photo
                 key={uuid()}
                 farm={item.farm}
@@ -78,17 +71,12 @@ export default class Wall extends React.Component {
                 secret={item.secret}
             />
         ));
-        // this.state.listPhotos.map(item => console.log("Item=", item));
-        // photoList.map(item => console.log("photoList Item=", item)); //TRACE
 
         return (
             <Container>
                 <Search>
                     <SearchPhotos  addPhotos={this.addPhotos}/>
                 </Search>
-                {/* <Gallery>
-                    {photoList}
-                </Gallery> */}
                 <InfiniteScroll
                     dataLength={photoList.length}
                     next={this.fetchMoreData}
@@ -107,13 +95,6 @@ export default class Wall extends React.Component {
                     </Gallery>
                 </InfiniteScroll>
             </Container>
-                
-                
-                
-               
-
-
         );
-
     }
 }

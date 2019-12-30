@@ -1,8 +1,6 @@
 export default (string) => { 
-    console.log("getKeyWords!")
-    const words = string.split(" ");
-    console.log("words=", words);
+    //Take input search terms and convert into flickr friendly keyword format
+    const words = string.split(" "); 
     const keywords = words.join('+');
-    console.log("keywords=", keywords);
     return keywords;
 }

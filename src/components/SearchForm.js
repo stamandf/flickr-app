@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import getKeyWords from '../utilities/buildSrchTerm';
-// import svgSprite from '../img/sprite.svg';
 
 
 class SearchForm extends React.Component {
@@ -19,19 +18,12 @@ class SearchForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let newKeywords = getKeyWords(this.state.text);
-        console.log("KeyWords = ", newKeywords);
         
         //reset form
         this.setState({ text: ''}); 
         this.text.blur();
         
         this.props.history.push(`/${newKeywords}`);
-       
-        
-       
-
-        // alert(`You are searching for pictures with: ${newKeywords}`);
-        // this.setState({ text:'' });
     }
     
     render() {
@@ -49,7 +41,6 @@ class SearchForm extends React.Component {
                         value={this.state.text}
                         onChange={this.handleChange}
                     />
-                    
                 </form>
             </div>
         );
