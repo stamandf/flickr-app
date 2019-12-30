@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.3efa96f9.chunk.css",
-    "main.js": "/static/js/main.a64b9aae.chunk.js",
-    "main.js.map": "/static/js/main.a64b9aae.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5b50bb1e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5b50bb1e.js.map",
-    "static/js/2.62a7068a.chunk.js": "/static/js/2.62a7068a.chunk.js",
-    "static/js/2.62a7068a.chunk.js.map": "/static/js/2.62a7068a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.97a8312d24ffda9ec8ed21c2f87c5729.js": "/precache-manifest.97a8312d24ffda9ec8ed21c2f87c5729.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.3efa96f9.chunk.css.map": "/static/css/main.3efa96f9.chunk.css.map",
-    "static/js/2.62a7068a.chunk.js.LICENSE": "/static/js/2.62a7068a.chunk.js.LICENSE"
+    "main.css": "/flickr-app/static/css/main.e435ae02.chunk.css",
+    "main.js": "/flickr-app/static/js/main.e707529c.chunk.js",
+    "main.js.map": "/flickr-app/static/js/main.e707529c.chunk.js.map",
+    "runtime-main.js": "/flickr-app/static/js/runtime-main.bf5ff01d.js",
+    "runtime-main.js.map": "/flickr-app/static/js/runtime-main.bf5ff01d.js.map",
+    "static/js/2.06da6076.chunk.js": "/flickr-app/static/js/2.06da6076.chunk.js",
+    "static/js/2.06da6076.chunk.js.map": "/flickr-app/static/js/2.06da6076.chunk.js.map",
+    "index.html": "/flickr-app/index.html",
+    "precache-manifest.fa715a24354fce3edfddddab54b39fb4.js": "/flickr-app/precache-manifest.fa715a24354fce3edfddddab54b39fb4.js",
+    "service-worker.js": "/flickr-app/service-worker.js",
+    "static/css/main.e435ae02.chunk.css.map": "/flickr-app/static/css/main.e435ae02.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.5b50bb1e.js",
-    "static/js/2.62a7068a.chunk.js",
-    "static/css/main.3efa96f9.chunk.css",
-    "static/js/main.a64b9aae.chunk.js"
+    "static/js/runtime-main.bf5ff01d.js",
+    "static/js/2.06da6076.chunk.js",
+    "static/css/main.e435ae02.chunk.css",
+    "static/js/main.e707529c.chunk.js"
   ]
 }
