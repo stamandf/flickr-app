@@ -57,15 +57,9 @@ export default class Wall extends React.Component {
                         listPhotos: this.state.listPhotos.concat(photosFound.photo)
                     })
                     
-                    //reset form
-                    
-                    
-                    // Photo Source URLs:
-                    // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
                 }
             });
-            
-        })
+        }, 500);
     }
 
     render() {
