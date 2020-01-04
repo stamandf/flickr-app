@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import photo from '../utilities/getPhotos';
+import fetchPhotos from '../utilities/getPhotos';
 import getKeyWords from '../utilities/buildSrchTerm';
 
 let photosFound = [];
@@ -25,7 +25,7 @@ class SearchPhotos extends React.Component {
         this.text.blur();
 
         //get photos with input keywords
-        photo.fetchPhotos(newKeywords, 1, (errorMessage, results) => {
+        fetchPhotos(newKeywords, 1, (errorMessage, results) => {
             if(errorMessage) {
                 console.log(errorMessage);
             } else {

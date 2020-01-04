@@ -1,7 +1,8 @@
-const flickr = require('./flickrConstants');
+import { KEY, FLICKRMETHOD, FORMAT } from './flickrConstants';
+// const flickr = require('./flickrConstants');
 const request = require('request');
 
-console.log('Flickr constants are:', flickr.KEY, flickr.FLICKRMETHOD, flickr.FORMAT);
+// console.log('Flickr constants are:', flickr.KEY, flickr.FLICKRMETHOD, flickr.FORMAT);
 
 const fetchPhotos = (srchtext, srchpage, callback) => {
     // const key = '&api_key=44779de00e72e9ec8ffbf165bc0f6ca6';
@@ -12,7 +13,8 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
 
     // The flickr method flickr.photos.search request URL
     // let req_url = flickrMethod + key + text + page + format;
-    let req_url = flickr.FLICKRMETHOD + flickr.KEY + text + page + flickr.FORMAT;
+    // let req_url = flickr.FLICKRMETHOD + flickr.KEY + text + page + flickr.FORMAT;
+    let req_url = FLICKRMETHOD + KEY + text + page + FORMAT;
 
 
     request ({
@@ -32,4 +34,5 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
 
 
 }
-module.exports.fetchPhotos = fetchPhotos;
+export default fetchPhotos
+// module.exports.fetchPhotos = fetchPhotos;

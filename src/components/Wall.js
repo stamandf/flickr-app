@@ -7,7 +7,7 @@ import Photo from './Photo';
 import Gallery from './Gallery';
 import Container from './Container';
 import Search from './Search';
-import photo from '../utilities/getPhotos';
+import fetchPhotos from '../utilities/getPhotos';
 
 export default class Wall extends React.Component {
     constructor(props) {
@@ -43,7 +43,7 @@ export default class Wall extends React.Component {
             return;
         }
         setTimeout(() => {
-            photo.fetchPhotos(this.state.keywords, this.state.page+1, (errorMessage, results) => {
+            fetchPhotos(this.state.keywords, this.state.page+1, (errorMessage, results) => {
                 if(errorMessage) {
                     console.log(errorMessage);
                 } else {

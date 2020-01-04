@@ -4,10 +4,5 @@ const FORMAT = '&format=json&nojsoncallback=1';
 
 console.log(`KEY=${KEY}, FLICKRMETHOD=${FLICKRMETHOD}, FORMAT=${FORMAT}`);
 
-// module.exports = {
-//     KEY : KEY,
-//     FLICKRMETHOD: FLICKRMETHOD,
-//     FORMAT: FORMAT
-// }
-
-module.exports = { KEY,FLICKRMETHOD, FORMAT }
+// module.exports = { KEY,FLICKRMETHOD, FORMAT }
+export { KEY, FLICKRMETHOD, FORMAT }
