@@ -62,7 +62,7 @@ export default class Wall extends React.Component {
         const photoList = this.state.listPhotos.map(item => (
             //format each item into url in about format
             // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-
+            
             <Photo
                 key={uuid()}
                 farm={item.farm}
