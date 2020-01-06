@@ -15,14 +15,8 @@ const fetchPhotos = (srchtext, srchpage, callback) => {
         json:true
     }, (error, response, body) => {
         if(!error && response.statusCode === 200) {
-            // console.log("body.photos=",body.photos); //TRACE
-            // console.log("body.photo array=",body.photos.photo); //TRACE
-            // console.log("body.photo array[0]=",body.photos.photo[0]); //TRACE
-            // console.log("body.photo array[0].server=",body.photos.photo[0].server); //TRACE
-            // let newPhoto = body.photos.photo.filter(item => item.server !== "0"); //TEST
-            body.photos.photo = body.photos.photo.filter(item => item.server !== "0"); //Filter out broken links: Remove all server= 0;
-            // console.log("new photo", newPhoto);  //TRACE
-
+            //Filter out broken links: Remove all server= 0;
+            body.photos.photo = body.photos.photo.filter(item => item.server !== "0"); 
             callback(undefined, {
                 page: body.photos.page,
                 total: body.photos.total,
